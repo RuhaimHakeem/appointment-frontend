@@ -1,25 +1,37 @@
-import React from "react";
-import { SafeAreaView } from "react-native";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import React, { useCallback } from "react";
 import styled from "styled-components/native";
-import { HomePageMain, Navbar } from "../../components";
+import { HomeScreenContent } from "../../components";
 
-const SHeader = styled.View`
-  padding: 8px;
-  margin: 0 8px;
-`;
+SplashScreen.preventAutoHideAsync();
 
-const SImage = styled.Image`
-  position: absolute;
+const SWrapper = styled.SafeAreaView`
+  flex: 1;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const HomeScreen = () => {
+  const [fontsLoaded] = useFonts({
+    DMBold: require("../../assets/fonts/DMSans-Bold.ttf"),
+    DMMedium: require("../../assets/fonts/DMSans-Medium.ttf"),
+    DMRegular: require("../../assets/fonts/DMSans-Regular.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <SafeAreaView>
-      <SImage source={require("./bg.webp")} />
-      <SHeader>
-        <Navbar />
-        <HomePageMain />
-      </SHeader>
-    </SafeAreaView>
+    <SWrapper onLayout={onLayoutRootView}>
+      <HomeScreenContent />
+    </SWrapper>
   );
 };

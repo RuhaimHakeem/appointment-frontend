@@ -1,2 +1,2 @@
-export * from "./home-main";
+export * from "./home-screen-content";
 export * from "./navbar";

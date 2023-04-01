@@ -14,6 +14,7 @@ import {
   typography,
   border,
 } from "styled-system";
+import { FONT } from "../../../constants";
 
 type StyledProps = ColorProps &
   SpaceProps &
@@ -26,6 +27,7 @@ interface TextProps extends StyledProps {}
 
 const SText = styled(RNText)<TextProps>`
   font-size: 15px;
+  font-family: ${FONT.regular}
 
   letter-spacing: -0.24px;
   ${color}
