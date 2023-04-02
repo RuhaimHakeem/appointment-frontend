@@ -12,11 +12,6 @@ const SWrapper = styled.View`
   align-items: center;
 `;
 
-const SImage = styled.Image`
-  height: 300px;
-  width: 300px;
-`;
-
 const SStaffBtnWrapper = styled.View``;
 
 const SPatientBtnWrapper = styled.View``;
@@ -32,9 +27,6 @@ export const HomeScreenContent: React.FC = () => {
   const navigation: NavigationProp = useNavigation();
   return (
     <SWrapper>
-      <View>
-        <SImage source={images.doctor} />
-      </View>
       <SStaffBtnWrapper>
         <Button buttonStyle="primary" onPress={() => {}} mt="16px">
           CONTINUE AS STAFF

@@ -1,2 +1,2 @@
 export * from "./home-screen-content";
-export * from "./navbar";
+export * from "./make-appointment-form";

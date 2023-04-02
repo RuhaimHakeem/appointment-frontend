@@ -17,7 +17,7 @@ import { COLORS } from "../../../constants";
 
 type StyledProps = TypographyProps & SpaceProps & ColorProps & LayoutProps;
 
-interface ButtonStyles extends StyledProps {
+interface ButtonStyles {
   bgColor: string;
   fontColor: string;
   borderWidth: string;
@@ -25,14 +25,14 @@ interface ButtonStyles extends StyledProps {
 
 interface Props extends StyledProps, TouchableOpacityProps {
   buttonStyle: string;
-  children: React.ReactNode | string;
+  children: React.ReactNode;
 }
 
 const SWrapper = styled(TouchableOpacity)<ButtonStyles>`
   background-color: ${({ bgColor }) => bgColor};
   padding: 8px 16px;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 50px;
   border: ${({ borderWidth }) => borderWidth} solid black;
   width: auto;
   ${space};
@@ -44,7 +44,7 @@ const SWrapper = styled(TouchableOpacity)<ButtonStyles>`
 export const Button: React.FC<Props> = ({ children, buttonStyle, ...rest }) => {
   let bgColor = COLORS.white;
   let fontColor = COLORS.primary;
-  let borderWidth: string = "";
+  let borderWidth = "";
 
   switch (buttonStyle) {
     case "primary":

@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { BookAppointment, HomeScreen } from "../screens";
-import { COLORS } from "../constants";
+import { MakeAppointmentScreen, HomeScreen } from "../screens";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -15,8 +14,10 @@ export const Navigation = () => {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="Appointment"
-        component={BookAppointment}
-        options={{ presentation: "modal" }}
+        component={MakeAppointmentScreen}
+        options={{
+          headerTitle: "Make Appointment",
+        }}
       />
     </Stack.Navigator>
   );

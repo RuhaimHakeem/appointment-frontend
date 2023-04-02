@@ -2,7 +2,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useCallback } from "react";
 import styled from "styled-components/native";
-import { HomeScreenContent } from "../../components";
+import { HomeScreenContent, HomeScreenView } from "../../components";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,7 +31,7 @@ export const HomeScreen = () => {
   }
   return (
     <SWrapper onLayout={onLayoutRootView}>
-      <HomeScreenContent />
+      <HomeScreenView />
     </SWrapper>
   );
 };

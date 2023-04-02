@@ -1,2 +1,2 @@
 export * from "./home";
-export * from "./book-appointment";
+export * from "./make-appointment";
