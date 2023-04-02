@@ -54,6 +54,10 @@ export const MakeAppointmentForm = () => {
     }
   };
 
+  const submitHandler = () => {
+    formik.handleSubmit();
+  };
+
   return (
     <SWrapper>
       <SInputsWrapper>
@@ -120,7 +124,7 @@ export const MakeAppointmentForm = () => {
           />
         </STextInputWrapper>
 
-        <Button mt="16px" buttonStyle="primary" onPress={formik.handleSubmit}>
+        <Button mt="16px" buttonStyle="primary" onPress={submitHandler}>
           Make Appointment
         </Button>
       </SInputsWrapper>
