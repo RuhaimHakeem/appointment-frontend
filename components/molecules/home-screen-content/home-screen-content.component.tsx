@@ -28,14 +28,18 @@ export const HomeScreenContent: React.FC = () => {
   return (
     <SWrapper>
       <SStaffBtnWrapper>
-        <Button buttonStyle="primary" onPress={() => {}} mt="16px">
+        <Button
+          buttonStyle="primary"
+          onPress={() => navigation.navigate("Appointments")}
+          mt="16px"
+        >
           CONTINUE AS STAFF
         </Button>
       </SStaffBtnWrapper>
       <SPatientBtnWrapper>
         <Button
           buttonStyle="secondary"
-          onPress={() => navigation.navigate("Appointment")}
+          onPress={() => navigation.navigate("MakeAppointment")}
           mt="16px"
         >
           CONTINUE AS PATIENT

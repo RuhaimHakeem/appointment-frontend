@@ -7,9 +7,9 @@ import { SpaceProps, space } from "styled-system";
 const STextInput = styled(Input)`
   width: auto;
   padding: 8px;
-  font-family: ${FONT.medium} 
+  font-family: ${FONT.medium};
   border: 1px solid ${COLORS.primary};
-  background-color: ${COLORS.lightWhite}; 
+  background-color: ${COLORS.lightWhite};
   border-radius: 4px;
   ${space}
 `;

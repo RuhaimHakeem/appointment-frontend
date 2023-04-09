@@ -13,13 +13,12 @@ import {
   border,
 } from "styled-system";
 import { Text } from "../text";
-import { COLORS } from "../../../constants";
+import { COLORS, FONT } from "../../../constants";
 
 type StyledProps = TypographyProps & SpaceProps & ColorProps & LayoutProps;
 
 interface ButtonStyles {
   bgColor: string;
-  fontColor: string;
   borderWidth: string;
 }
 
@@ -45,30 +44,31 @@ export const Button: React.FC<Props> = ({ children, buttonStyle, ...rest }) => {
   let bgColor = COLORS.white;
   let fontColor = COLORS.primary;
   let borderWidth = "";
+  let fontFamily = "";
 
   switch (buttonStyle) {
     case "primary":
       bgColor = COLORS.primary;
       fontColor = COLORS.white;
+      fontFamily = FONT.bold;
+
       break;
 
     case "secondary":
       bgColor = COLORS.lightWhite;
       fontColor = COLORS.primary;
       borderWidth = "1px";
+      fontFamily = FONT.medium;
       break;
 
     default:
       break;
   }
   return (
-    <SWrapper
-      bgColor={bgColor}
-      fontColor={fontColor}
-      borderWidth={borderWidth}
-      {...rest}
-    >
-      <Text.SText color={fontColor}>{children}</Text.SText>
+    <SWrapper bgColor={bgColor} borderWidth={borderWidth} {...rest}>
+      <Text.SText fontFamily={fontFamily} color={fontColor}>
+        {children}
+      </Text.SText>
     </SWrapper>
   );
 };

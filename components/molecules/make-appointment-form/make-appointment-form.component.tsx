@@ -1,10 +1,9 @@
+import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
+import { useFormik } from "formik";
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { Button, TextInput, DateInput, Text } from "../../atoms";
-import { Formik, useFormik, ErrorMessage } from "formik";
-import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { AppointmentSchema } from "../../../validation/validation";
-import { Text as Do } from "react-native";
+import { Button, DateInput, Text, TextInput } from "../../atoms";
 
 const SWrapper = styled.View`
   margin-horizontal: 8px;
@@ -91,7 +90,7 @@ export const MakeAppointmentForm = () => {
             }
             style={{
               height: 28,
-              flex: 1,
+              justifyContent: "center",
             }}
           />
         </STextInputWrapper>

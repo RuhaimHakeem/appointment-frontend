@@ -26,13 +26,11 @@ type StyledProps = ColorProps &
 interface TextProps extends StyledProps {}
 
 const SText = styled(RNText)<TextProps>`
-  font-size: 15px;
-  font-family: ${FONT.regular}
+  font-size: 16px;
+  font-family: ${FONT.regular};
 
-  letter-spacing: -0.24px;
   ${color}
   ${space}
-  ${fontWeight}
   ${flexbox}
   ${typography}
   ${border}

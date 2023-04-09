@@ -1,4 +1,3 @@
-import { Text, View } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
 import { images } from "../../../constants";

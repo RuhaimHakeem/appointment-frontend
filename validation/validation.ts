@@ -15,7 +15,7 @@ const AppointmentSchema = yup.object().shape({
   email: yup.string().email().required("Email is Required"),
   mobile: yup
     .string()
-    .required("Please Provide  a Phone Number")
+    .required("Please Provide a Phone Number")
     .matches(phoneNumberRegex, "Please enter a valid phone number"),
 });
 

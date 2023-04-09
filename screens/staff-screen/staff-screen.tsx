@@ -1,16 +1,17 @@
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
-import { MakeAppointmentScreenView } from "../../components";
+import { StaffScreenView } from "../../components";
 
 const SWrapper = styled.SafeAreaView`
   flex: 1;
   background-color: #fff;
 `;
 
-export const MakeAppointmentScreen = () => {
+export const StaffScreen = () => {
   return (
     <SWrapper>
-      <MakeAppointmentScreenView />
+      <StaffScreenView />
     </SWrapper>
   );
 };
